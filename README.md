@@ -9,7 +9,7 @@ Common Azure terraform module to create an Azure KeyVault
 Resource naming is based on the Microsoft CAF naming convention best practices. Custom naming is available by setting the parameter `custom_name`. We rely on the official Terraform Azure CAF naming provider to generate resource names when available.
 
 ## Security 
-Instead of using keyvault access policies to control key vault access, we use the new RBAC model. See [https://docs.microsoft.com/fr-fr/azure/key-vault/general/rbac-guide?tabs=azure-cli] (https://docs.microsoft.com/fr-fr/azure/key-vault/general/rbac-guide?tabs=azure-cli) for more information.
+Instead of using keyvault access policies to control key vault access, we use the new RBAC model. See [https://docs.microsoft.com/fr-fr/azure/key-vault/general/rbac-guide?tabs=azure-cli](https://docs.microsoft.com/fr-fr/azure/key-vault/general/rbac-guide) for more information.
 
 ## Usage
 ```hcl
@@ -44,7 +44,7 @@ module "umanis_resource_group" {
   caf_prefixes = module.umanis_naming.resource_group_prefixes
 }
 
-module "public_ip" {
+module "umanis_keyvault" {
   source = "Umanis/keyvault/azurerm"
 
   resource_group_name = module.umanis_resource_group.name
