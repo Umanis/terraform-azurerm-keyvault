@@ -43,7 +43,7 @@ resource "azurerm_key_vault" "self" {
   enabled_for_template_deployment = var.enabled_for_template_deployment
   purge_protection_enabled        = var.soft_delete_enabled
   soft_delete_retention_days      = var.soft_delete_retention_days
-  enable_rbac_authorization       = true
+  enable_rbac_authorization       = var.enable_rbac_authorization
 
   dynamic "network_acls" {
     for_each = var.network_acls == null ? [] : [var.network_acls]

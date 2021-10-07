@@ -9,7 +9,9 @@ Common Azure terraform module to create an Azure KeyVault
 Resource naming is based on the Microsoft CAF naming convention best practices. Custom naming is available by setting the parameter `custom_name`. We rely on the official Terraform Azure CAF naming provider to generate resource names when available.
 
 ## Security 
-Instead of using keyvault access policies to control key vault access, we use the new RBAC model. See [https://docs.microsoft.com/fr-fr/azure/key-vault/general/rbac-guide?tabs=azure-cli](https://docs.microsoft.com/fr-fr/azure/key-vault/general/rbac-guide) for more information.
+We use the new RBAC model. See [https://docs.microsoft.com/fr-fr/azure/key-vault/general/rbac-guide?tabs=azure-cli] (https://docs.microsoft.com/fr-fr/azure/key-vault/general/rbac-guide?tabs=azure-cli) for more information.
+
+Support for access strategies is reserved for legacy projects.
 
 ## Usage
 ```hcl
@@ -74,6 +76,7 @@ module "umanis_keyvault" {
 | <a name="input_custom_name"></a> [custom\_name](#input\_custom\_name) | Specifies a custom name for the resource. | `string` | `""` | no |
 | <a name="input_custom_tags"></a> [custom\_tags](#input\_custom\_tags) | The custom tags to add on the resource. | `map(string)` | `{}` | no |
 | <a name="input_description"></a> [description](#input\_description) | Resource group description. | `string` | `""` | no |
+| <a name="input_enable_rbac_authorization"></a> [enable\_rbac\_authorization](#input\_enable\_rbac\_authorization) | Enable RBAC authorization for the specified vault. | `bool` | `true` | no |
 | <a name="input_enabled_for_deployment"></a> [enabled\_for\_deployment](#input\_enabled\_for\_deployment) | Boolean flag to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault. | `bool` | `false` | no |
 | <a name="input_enabled_for_disk_encryption"></a> [enabled\_for\_disk\_encryption](#input\_enabled\_for\_disk\_encryption) | Boolean flag to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys. | `bool` | `false` | no |
 | <a name="input_enabled_for_template_deployment"></a> [enabled\_for\_template\_deployment](#input\_enabled\_for\_template\_deployment) | Boolean flag to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault. | `bool` | `false` | no |
