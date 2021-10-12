@@ -28,6 +28,7 @@ resource "azurecaf_name" "self" {
   use_slug      = true
   clean_input   = true
   separator     = var.name_separator
+  random_length = 5
 }
 
 resource "azurerm_key_vault" "self" {
