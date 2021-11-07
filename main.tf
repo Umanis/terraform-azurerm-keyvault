@@ -57,5 +57,4 @@ resource "azurerm_key_vault" "self" {
       ip_rules                   = rule.value.ip_rules
     }
   }
-
 }

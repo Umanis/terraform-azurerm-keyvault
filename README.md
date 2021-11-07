@@ -46,7 +46,7 @@ module "umanis_resource_group" {
   caf_prefixes = module.umanis_naming.resource_group_prefixes
 }
 
-module "umanis_keyvault" {
+module "umanis_key_vault" {
   source = "Umanis/keyvault/azurerm"
 
   resource_group_name = module.umanis_resource_group.name
@@ -61,9 +61,9 @@ module "umanis_keyvault" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.15.0 |
-| <a name="requirement_azurecaf"></a> [azurecaf](#requirement\_azurecaf) | >= 1.2.5 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=2.62.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_azurecaf"></a> [azurecaf](#requirement\_azurecaf) | >= 1.2.6 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=2.84.0 |
 
 ## Inputs
 
